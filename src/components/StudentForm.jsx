@@ -194,7 +194,9 @@ const StudentForm = ({ onSubmit }) => {
       <button type="submit" className="submit-btn" disabled={isGenerating}>
         {isGenerating ? "Generating..." : "Generate ID Card"}
       </button>
-    </form>
+      <footer>
+        <p>©2026 onlineidbuilder. All Rights Reserved by Ganesh Shinde.</p>
+      </footer>    </form>
   );
 };
 
