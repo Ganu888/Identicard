@@ -14,47 +14,47 @@ import * as htmlToImage from 'html-to-image';
 const IdCardPreview = ({ studentData, template }) => {
   const cardRef = useRef(null);
 
-j
-const handleDownload = async () => {
-  if (cardRef.current) {
-    try {
-      const dataUrl = await toPng(cardRef.current, { quality: 0.95 });
 
-      const fileName = `${studentData.name.replace(/\s+/g, "-")}-ID-Card.png`;
+  const handleDownload = async () => {
+    if (cardRef.current) {
+      try {
+        const dataUrl = await toPng(cardRef.current, { quality: 0.95 });
 
-      const isNative = Capacitor.isNativePlatform();
+        const fileName = `${studentData.name.replace(/\s+/g, "-")}-ID-Card.png`;
 
-      if (isNative) {
-        // 📱 MOBILE FIX
+        const isNative = Capacitor.isNativePlatform();
 
-        const base64Data = dataUrl.replace(/^data:image\/png;base64,/, "");
+        if (isNative) {
+          // 📱 MOBILE FIX
 
-        await Filesystem.writeFile({
-          path: fileName,
-          data: base64Data,
-          directory: Directory.Cache,
-        });
+          const base64Data = dataUrl.replace(/^data:image\/png;base64,/, "");
 
-        // ✅ Use dataUrl instead of file.uri
-        await Share.share({
-          title: 'ID Card',
-          text: 'Save this image',
-          url: dataUrl,
-        });
+          await Filesystem.writeFile({
+            path: fileName,
+            data: base64Data,
+            directory: Directory.Cache,
+          });
 
-      } else {
-        // 🌐 WEB
-        const link = document.createElement("a");
-        link.download = fileName;
-        link.href = dataUrl;
-        link.click();
+          // ✅ Use dataUrl instead of file.uri
+          await Share.share({
+            title: 'ID Card',
+            text: 'Save this image',
+            url: dataUrl,
+          });
+
+        } else {
+          // 🌐 WEB
+          const link = document.createElement("a");
+          link.download = fileName;
+          link.href = dataUrl;
+          link.click();
+        }
+
+      } catch (error) {
+        console.error("Error generating image:", error);
       }
-
-    } catch (error) {
-      console.error("Error generating image:", error);
     }
-  }
-};
+  };
   // const handleDownload = async () => {
   //   if (cardRef.current) {
   //     try {
