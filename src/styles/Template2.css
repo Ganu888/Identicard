@@ -1,0 +1,118 @@
+.template2 {
+  background-color: white;
+  overflow: hidden;
+}
+
+.card-header-t2 {
+  background: linear-gradient(to right, #38a169, #2f855a);
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+.card-header-t2 h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card-header-t2 p {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.card-body-t2 {
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.card-left-t2 {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.student-photo-t2 {
+  width: 120px;
+  height: 120px;
+  border: 4px solid #38a169;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.student-photo-t2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.qr-code-t2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-right-t2 {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.student-details-t2-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-details-t2-table tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.student-details-t2-table tr:last-child {
+  border-bottom: none;
+}
+
+.student-details-t2-table td {
+  padding: 8px 4px;
+  font-size: 0.875rem;
+  vertical-align: top;
+}
+
+.detail-label-t2 {
+  font-weight: 600;
+  color: #2f855a;
+  width: 40%;
+}
+
+.principal-signature-image-t2 {
+  display: block;
+  width: 120px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.signature-placeholder-line-t2 {
+  width: 120px;
+  height: 36px;
+  border-bottom: 2px solid #c6f6d5;
+}
+
+.card-footer-t2 {
+  background-color: #f0fff4;
+  padding: 12px;
+  text-align: center;
+  border-top: 1px solid #c6f6d5;
+}
+
+.card-footer-t2 p {
+  font-size: 0.75rem;
+  color: #2f855a;
+  margin: 2px 0;
+}
